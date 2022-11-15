@@ -1,0 +1,45 @@
+.tier_main_bg {
+    padding: 120px 0px;
+    background-color: #02121D !important;
+}
+
+.tier_card {
+    background-color: #0a1f2f;
+    color: #c1c7cb;
+}
+
+.tier_body h4 {
+    color: #28DBD1;
+    padding-block: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    font-size: 1.5rem;
+    font-family: "Rajdhani", sans-serif;
+    /* color: #ffffff; */
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.tier_card:hover {
+    /* border: 1px solid rgba(40, 219, 209, 0.5); */
+    border: 1px solid #ffbf00 !important;
+
+}
+
+.sasa {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-width: 90%;
+}
+
+.sasa h4 {
+    color: #C1C7CB;
+    font-size: 1rem;
+    line-height: 1.625;
+    font-family: "Roboto", sans-serif;
+}
+
+.sasa p {
+    font-size: 1.125rem;
+    color: #fff;
+    font-weight: 600;
+}

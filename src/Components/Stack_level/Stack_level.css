@@ -1,0 +1,87 @@
+.stack_level_h6 {
+    font-size: 16px !important;
+    color: #c1c7cb;
+
+}
+
+.stack_level_content {
+    display: flex;
+    align-items: center;
+}
+
+.stack_icons {
+    margin-top: -8px;
+}
+
+.s_l_p {
+    color: #c1c7cb;
+
+}
+
+.S_sss {
+    gap: 15px;
+}
+
+.S_ssss {
+    /* margin-top: ; */
+    gap: 3%;
+}
+
+.s_l_btn {
+    line-height: 0px !important;
+}
+
+.level_btn {
+    padding: 0px 10px !important;
+    background-color: #ffbf00 !important;
+    color: black !important;
+}
+
+.level_btn:hover {
+    border: 1px solid #ffbf00 !important;
+    background-color: transparent !important;
+    color: white !important;
+}
+
+
+@media only screen and (max-width:600px) {
+    .width_adjust {
+        width: 200px !important;
+        /* font-size: 0.7rem !important; */
+        display: none;
+    }
+    .width_adjust3{
+        width: 200px !important;
+
+    }
+    .width_adjust2{
+
+    }
+
+    .S_ssss {
+        gap: 5% !important;
+    }
+    .contract1{
+        display: none;
+    }
+}
+.star_color{
+    color: #ffbf00 !important;
+}
+
+.aliment{
+    margin-top: -0rem !important;
+    color: #ffff;
+}
+
+
+@media (min-width:600px)and (max-width:6000px) {
+  
+    .width_adjust2{
+        display: none;
+    }
+    .contract2{
+        display: none;
+    }
+
+}

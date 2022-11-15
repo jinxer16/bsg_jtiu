@@ -1,0 +1,39 @@
+.stack_inner_card {
+    padding: 20px;
+    background-color: #0A1F2F;
+}
+
+.stack_sub_cards {
+    display: flex;
+    background-color: #02121d;
+    padding: 15px 20px;
+    justify-content: center !important;
+    align-items: center;
+}
+
+.stack_d_img {
+    width: 27% !important;
+}
+
+.s_d_W {
+    width: 58% !important;
+    margin-top: 10px;
+    padding-inline: 2rem;
+    line-height: 56px;
+    font-size: 1.125rem;
+
+    border-radius: 5px;
+
+    transform: skew(-5deg);
+    text-decoration: none;
+    font-family: "Rajdhani", sans-serif;
+    color: #000000;
+    padding-inline: 1.25rem;
+    line-height: 40px;
+    transform-origin: right;
+    transition: all 0.3s ease;
+    /* background: #28DBD1 !important; */
+    background-color: #FFBF00;
+    border: 1px solid transparent;
+    font-weight: 600;
+}

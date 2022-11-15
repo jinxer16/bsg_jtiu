@@ -1,0 +1,40 @@
+.roadmap_main_bg {
+    padding-bottom: 120px;
+    padding-top: 40px;
+    background-color: #0a1f2f;
+}
+
+.road_map_card {
+    background-color: #0e436a !important;
+    border-radius: 4px !important;
+}
+
+.sasd {
+    color: #C1C7CB;
+    font-size: 1rem;
+    line-height: 1.625;
+    font-family: "Roboto", sans-serif;
+}
+
+.roadmap_body {
+    padding: 40px;
+}
+
+.road_ h4 {
+    font-family: "Rajdhani", sans-serif;
+    color: #ffffff;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.road_ p {
+    color: var(--clr);
+    font-weight: 700;
+    font-family: "Rajdhani", sans-serif;
+    color: #28DBD1;
+    font-size: 1.5rem;
+}
+
+.road_map_heading {
+    color: #ffbf00 !important;
+}

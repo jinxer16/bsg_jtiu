@@ -1,0 +1,63 @@
+.daRizaU {
+    color: #9A9EB2;
+    border-right: 0.01rem solid #EBEAED;
+    height: 0.28rem;
+    line-height: 0.28rem;
+    width: 7%;
+}
+
+.pehli_line {
+    /* background-color: rgb(29, 31, 37); */
+    background-color: #0A1F2F !important;
+
+    padding: 5px 30px 15px 27px;
+    width: 640px;
+    display: flex;
+    color: white;
+    justify-content: space-between !important;
+    font-size: 12px;
+}
+
+.las_line {
+    /* background-color: rgb(29, 31, 37); */
+    background-color: #0A1F2F !important;
+
+    padding: 5px 30px 15px 27px;
+    width: 640px;
+    display: flex;
+    color: white;
+    justify-content: space-between !important;
+    border-radius: 0px 0 10px 10px;
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 700px) {
+    .fi_line {
+        width: 340px;
+    }
+
+    .last_line {
+        width: 340px;
+    }
+
+    .las_line {
+        width: 340px;
+    }
+
+    .first_line {
+        width: 340px;
+    }
+
+    .pehli_line {
+        width: 340px;
+    }
+
+    .main_third {
+        width: 340px;
+    }
+
+    .main_thir {
+        width: 340px;
+    }
+}

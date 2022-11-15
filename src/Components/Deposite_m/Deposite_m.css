@@ -1,0 +1,108 @@
+.modal_bg {
+    background-color: #02121d !important;
+    border-bottom: none !important;
+}
+
+.modal_h4 {
+    color: var(--clr);
+    margin-left: 20% !important;
+}
+
+.input_modal {
+    width: 100%;
+    padding: 10px 10px 10px 20px;
+    background-color: #0A1F2F !important;
+
+    color: white !important;
+    border-radius: 10px !important;
+    /* border: 1px solid var(--clr) !important; */
+    border: 1px solid #FFBF00 !important
+}
+
+.input_modal:focus {
+    /* border: 1px solid var(--clr) !important; */
+    border: 1px solid #FFBF00 !important
+}
+
+.modal_pa {
+    color: white !important;
+    margin-top: 8px !important;
+    font-size: 14px !important;
+
+
+}
+
+.gsa {
+    margin-left: 15%;
+    gap: 15px;
+
+}
+
+.modal_sub_card {
+    background-color: #0A1F2F !important;
+    padding: 20px 40px;
+}
+
+.sasaasa {
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.input_sub_p {
+    color: var(--clr);
+    font-weight: 700;
+    font-size: 22px !important;
+    letter-spacing: 2px;
+    margin-top: 5px !important;
+}
+
+.body_m_bg {
+    background-color: #02121D !important;
+}
+
+.sub_para {
+    color: #c1c7cb;
+    font-size: 12px !important;
+}
+
+.s_d_Ws {
+    width: 100% !important;
+    margin-top: 10px;
+    padding-inline: 2rem;
+    line-height: 56px;
+    font-size: 1.125rem;
+
+    border-radius: 5px;
+
+    transform: skew(-5deg);
+    text-decoration: none;
+    font-family: "Rajdhani", sans-serif;
+    color: #000000;
+    padding-inline: 1.25rem;
+    line-height: 40px;
+    transform-origin: right;
+    transition: all 0.3s ease;
+    /* background: #28DBD1 !important; */
+    background-color: #FFBF00 !important;
+    border: 1px solid transparent;
+    font-weight: 600;
+}
+
+.footer_m_bg {
+    background-color: #02121d !important;
+    margin-top: none !important;
+    border-top: none ! important;
+}
+
+
+
+
+.s_d_Ws:hover {
+    color: black !important;
+}
+
+@media only screen and (max-width:600px) {
+    .res_fs {
+        font-size: 11px !important;
+    }
+}

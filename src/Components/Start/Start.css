@@ -1,0 +1,43 @@
+.start_main_bg {
+    padding: 120px 0px;
+    background-color: #0A1F2F !important;
+}
+
+.start:hover .sh {
+    /* color: var(--clr) !important; */
+    color: #FFBF00 !important;
+}
+
+.start:hover .sh_img {
+    transform: scale(1.2);
+}
+
+.start_btn {
+    padding-inline: 2rem;
+    line-height: 56px;
+    font-size: 1.125rem;
+
+    border-radius: 5px;
+
+    transform: skew(-5deg);
+    text-decoration: none;
+    font-family: "Rajdhani", sans-serif;
+    color: #000000;
+    padding-inline: 1.25rem;
+    line-height: 40px;
+    transform-origin: right;
+    transition: all 0.3s ease;
+    /* background: #28DBD1; */
+    background-color: #FFBF00;
+    border: 1px solid transparent;
+    font-weight: 600;
+}
+
+.start_btn:hover {
+    color: white !important;
+    transform: translateY(-3px);
+    background: transparent !important;
+    border-color: #FFBF00 !important;
+    ;
+    /* box-shadow: 0 0 10px rgb(40 219 209 / 40%); */
+}

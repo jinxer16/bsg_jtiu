@@ -1,0 +1,117 @@
+.project_main {
+    padding: 100px 0xp;
+    background-color: #02121D;
+}
+
+.pro_item {
+    background-color: #0A1F2F;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    padding: 30px;
+    position: relative !important;
+}
+
+.pro_item_inner {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 30px;
+
+}
+
+.pro_item_name {
+    row-gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.pro_time {
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.625;
+    font-family: "Roboto", sans-serif;
+}
+
+.pro_item:hover {
+    /* border: 1px solid rgba(40, 219, 209, 0.5); */
+    border: 1px solid #FFBF00 !important
+}
+
+.pro_amount {
+    min-width: 250px;
+    margin-bottom: 0px;
+}
+
+.progress {
+    background-color: #02121d;
+    height: 12px;
+    border-radius: 3px;
+    --bs-progress-height: 1rem;
+    --bs-progress-font-size: 0.75rem;
+    --bs-progress-bg: #e9ecef;
+    --bs-progress-border-radius: 0.375rem;
+    --bs-progress-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    --bs-progress-bar-color: #fff;
+    --bs-progress-bar-bg: #0d6efd;
+    --bs-progress-bar-transition: width 0.6s ease;
+    display: flex;
+    height: var(--bs-progress-height);
+    overflow: hidden;
+}
+
+.progress_bar {
+    /* background-color: #28DBD1; */
+    background-color: #FFBF00;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--bs-progress-bar-color);
+    text-align: center;
+    white-space: nowrap;
+
+    transition: var(--bs-progress-bar-transition);
+}
+
+.am_h {
+    margin-top: 0;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    font-size: 1.25rem;
+}
+
+.cloo {
+    /* color: var(--clr); */
+    color: #FFBF00;
+
+}
+
+.pro_chain {
+    width: 40px;
+    height: 40px;
+}
+
+
+.pro_thumb {
+    /* border: 1px solid rgba(40, 219, 209, 0.5); */
+    border: 1px solid #FFBF00 !important;
+    border-radius: 5px;
+}
+
+.pro_h4 {
+    font-size: 1.25rem;
+    color: white;
+    font-weight: 700;
+    text-align: left;
+}

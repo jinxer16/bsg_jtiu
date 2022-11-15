@@ -1,0 +1,122 @@
+.team_main_bg {
+    padding-bottom: 120px;
+    padding-top: 40px !important;
+    /* background-color: #0A1F2F !important; */
+    background-color: #02121D !important;
+
+}
+
+body {
+    background-color: #02121D !important;
+}
+
+.real {
+    position: relative;
+}
+
+.team_main_bg::before {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    content: "";
+    box-shadow: inset 0 0 30px rgb(40 219 209 / 10%);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+/* .team_main_bg::after{
+    position: absolute;
+    content: "";
+    background-image: url(../Assets/graphic.svg);
+    background-size: contain;
+    width: 210px;
+    height: 250px;
+    top: 0;
+    right: 0;
+  
+    animation: light 6s linear infinite alternate;
+} */
+
+.team_para {
+    text-transform: capitalize;
+    font-weight: 600;
+    /* color: #28DBD1; */
+    color: #ffbf00 !important;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.team_h2 {
+    font-family: "Rajdhani", sans-serif;
+    color: #ffffff;
+    line-height: 1.25;
+    font-weight: 700;
+    font-size: 2.75rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.middle::after {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-transform: translateX(-50%);
+
+    transform: translateX(-50%);
+    bottom: 235px;
+    left: 50%;
+    width: 200px;
+    aspect-ratio: 7/1;
+    background-image: url(../Assets/header.svg);
+    position: absolute;
+    content: "";
+}
+
+.team_img_card {
+    background-color: #0A1F2F !important;
+    border-radius: 5px;
+
+
+}
+
+.img {
+    position: relative;
+    transition: 0.5s;
+}
+
+.img:hover .overlay {
+    opacity: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+    transition: .5s ease;
+    background-color: black;
+}
+
+.team_img_card:hover .team_h4 {
+    color: var(--clr);
+
+}
+
+.team_h4 {
+    font-family: "Rajdhani", sans-serif;
+    color: #ffffff;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.card_img_cont {
+    padding: 20px;
+}

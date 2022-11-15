@@ -1,0 +1,67 @@
+:root{
+    --clr:#28DBD1;
+}
+
+
+
+.cta_main_bg{
+    padding-bottom: 120px;
+}
+
+.cta_card_bg{
+    
+       
+        background-color: #0A1F2F !important;
+        border-radius: 15px !important;
+        padding-inline: 15px !important;
+        text-align: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        background-position: center !important;
+        border-left: 3px solid #28DBD1 !important;
+        border-right: 3px solid #28DBD1 !important;
+}
+.inner_body{
+    padding: 70px 15px;
+}
+
+.card_para{
+    text-transform: capitalize;
+    font-weight: 600;
+    color:var(--clr);
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.5rem;
+}
+
+.cta_h2{
+    font-family: "Rajdhani", sans-serif;
+    color: #ffffff;
+    line-height: 1.25;
+    font-weight: 700;
+    font-size: 2.75rem;
+    margin-bottom: 25px;
+
+}
+
+.cta_btn{
+    padding-inline: 1.5rem !important;
+    line-height: 56px !important;
+    font-size: 1.125rem !important;
+    transform-origin: right !important;
+    transition: all 0.3s ease !important;
+    background: #28DBD1 !important;
+    border: 1px solid transparent !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    font-family: "Rajdhani", sans-serif !important;
+    color: #000000 !important;
+    font-weight: 200;
+}
+
+.cta_btn:hover{
+     color: #28DBD1 !important;
+    transform: translateY(-3px) !important;
+    background: transparent !important;
+    border-color: #28DBD1 !important ;
+    box-shadow: 0 0 10px rgb(40 219 209 / 40%) !important;
+}

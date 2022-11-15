@@ -1,0 +1,25 @@
+.Sub_slider{
+    display: none;
+}
+.main_slider{
+    padding: 20px 0px;
+    background-color: #02121D;
+}
+
+body{
+    background-color: #02121D !important;  
+}
+
+
+
+
+
+
+@media only screen and (max-width:600px){
+    .main_slider{
+        display: none;
+    }
+    .Sub_slider{
+        display: block;
+    }
+}

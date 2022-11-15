@@ -1,0 +1,52 @@
+.homef_main {
+    padding: 100px 0px;
+    background-image: url(../Assets/bg.png);
+}
+
+.homef_h1 {
+    font-size: 4.0625rem;
+    margin-bottom: 15px;
+    text-transform: uppercase !important;
+    font-family: "Rajdhani", sans-serif;
+    color: #ffbf00 !important;
+    line-height: 1.25;
+    font-weight: 700;
+    text-align: left;
+}
+
+.homef_p {
+    font-size: 1.125rem;
+    color: #fff;
+    max-inline-size: 50ch;
+    text-align: left;
+}
+
+.ani {
+    animation: glide 2s ease-in-out alternate infinite;
+    position: relative;
+}
+
+@keyframes glide {
+    from {
+        left: 0px;
+        top: 0px;
+    }
+
+    to {
+        left: 0px;
+        top: 20px;
+    }
+
+}
+
+
+
+@media only screen and (max-width:600px) {
+    .home_f_img {
+        width: 250px !important;
+    }
+
+    .homef_h1 {
+        font-size: 2rem;
+    }
+}

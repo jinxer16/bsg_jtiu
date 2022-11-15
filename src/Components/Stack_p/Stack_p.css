@@ -1,0 +1,30 @@
+.main_stack_p_bg {
+    padding: 40px 0px;
+}
+
+.stacking_p_card {
+    background-color: #0A1F2F;
+    padding: 20px;
+}
+
+.inner_stack_p {
+
+    background-color: #02121D;
+    border-radius: 5px;
+    display: flex;
+    padding: 15px;
+    flex-direction: row !important;
+    /* align-items: center; */
+    gap: 50px;
+
+}
+
+.stack_p_h3 {
+    font-size: 16px;
+    line-height: 0.2rem;
+    color: white;
+}
+
+.icon_color {
+    color: #ffbf00 !important;
+}

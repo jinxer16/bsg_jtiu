@@ -1,0 +1,57 @@
+.main_trending{
+    padding: 120px 0px;
+    background-color: #02121D;
+}
+
+.content_inner{
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.trend_p{
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #28DBD1;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.5rem;
+}
+.fss{
+    font-size: 2.75rem;
+}
+.p_sub{
+    color: #c1c7cb;
+}
+.buuton{
+    display: flex;
+    margin-top: 40px;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.trending_btn{
+    width: 45px;
+    height: 45px;
+    /* -webkit-transform: skew(-5deg); */
+    /* -moz-transform: skew(-5deg); */
+    /* -ms-transform: skew(-5deg); */
+    /* -o-transform: skew(-5deg); */
+    /* transform: skew(-5deg); */
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 4px;
+    background-color: #0A1F2F;
+    color: #28DBD1;
+    border: 1px solid rgba(40, 219, 209, 0.1);
+}
+
+.trending_btn:hover{
+    background-color: #28DBD1;
+    color: #02121D;
+}

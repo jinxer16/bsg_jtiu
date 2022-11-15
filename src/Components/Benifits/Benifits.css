@@ -1,0 +1,40 @@
+.benifits_main_bg {
+    padding: 120px 0px;
+    background-color: #0a1f2f;
+    margin-top: 50px;
+}
+
+.section-header--middle {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+
+.section-header--middle::after {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    transform: translateX(-50%);
+    bottom: -35px;
+    left: 50%;
+    width: 200px;
+    aspect-ratio: 7/1;
+    background-image: url(../Assets/header.svg);
+    position: absolute;
+    content: "";
+}
+
+.beni_h4 {
+    font-family: "Rajdhani", sans-serif;
+    /* color: #ffffff; */
+    color: #ffbf00 !important;
+    line-height: 1.25;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.justify {
+    text-align: justify !important;
+}
