@@ -8,6 +8,7 @@ import { financeAppContractAddress, financeAppContract_Abi, financeAppTokenAddre
 import {useSelector, useDispatch}  from "react-redux";
 import {getpoolDetail} from '../../Redux/poolInfo/action';
 import {getRemaintime} from '../../Redux/remaintime/action';
+import {withdrawInfo} from '../../Redux/withdrawDetail/action'
 import { toast } from 'react-toastify';
 import ReactLoading from 'react-loading';
 function Deposite_m(props) {
@@ -45,6 +46,7 @@ function Deposite_m(props) {
                          })
                          dispatch(getRemaintime())
                          dispatch(getpoolDetail())
+                         dispatch(withdrawInfo(acc))
                          props.onHide();
                          toast.success("Amount Deposited successfully")
                          setloader(false)

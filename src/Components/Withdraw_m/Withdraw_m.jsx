@@ -6,13 +6,15 @@ import { MdArrowBackIos } from 'react-icons/md'
 import "./Withdraw_m.css"
 import ReactLoading from 'react-loading';
 import { financeAppContractAddress, financeAppContract_Abi } from '../../utilies/Contract';
+import {withdrawInfo} from '../../Redux/withdrawDetail/action'
 import { loadWeb3 } from '../../apis/api';
 import { toast } from 'react-toastify';
-import {useSelector}  from "react-redux"
+import {useSelector,useDispatch}  from "react-redux"
 
 function Withdraw_m(props) {
-    
+    const dispatch = useDispatch()
   let acc = useSelector((state) => state.connect?.connection);
+  let {withdrawDetail,all_val} = useSelector((state)=>state.withDrawInfo);
     const [loader, setLoader] = useState(false);
     const [available_withdraw, setAvailableWithdraw] = useState(0);
     const [rewardinfo, setRewardInfo] = useState({});
@@ -26,37 +28,7 @@ function Withdraw_m(props) {
           } else if (acc == "Connect Wallet") {
             console.log("Connect Wallet");
           }else{
-                let obj = {}
-                const web3 = window.web3;
-                let financeAppcontractOf = new web3.eth.Contract(financeAppContract_Abi, financeAppContractAddress);
-                // let availWithdraw = await financeAppcontractOf.methods.withDraw_(acc).call();
-                // availWithdraw = Number(web3.utils.fromWei(availWithdraw)).toFixed(2)
-                // setAvailableWithdraw(availWithdraw);
-                // let remianReward = await financeAppcontractOf.methods.remainingReward(acc).call();
-                // obj['remianReward'] = Number(web3.utils.fromWei(remianReward)).toFixed(2);
-                
-                let reward_info = await financeAppcontractOf.methods.rewardInfo(acc).call();
-                console.log("obj",reward_info)
-                console.log("reward_info.directs",reward_info.directs)
-                console.log("reward_info.capitals",reward_info.capitals)
-                let capitals = web3.utils.fromWei(reward_info.capitals)
-                let all_val =  (parseInt(web3.utils.fromWei(reward_info.capitals)) + parseInt(web3.utils.fromWei(reward_info.statics)) + parseInt(web3.utils.fromWei(reward_info.directs)) + parseInt(web3.utils.fromWei(reward_info.level4Released)) + parseInt(web3.utils.fromWei(reward_info.level5Released)) + parseInt(web3.utils.fromWei(reward_info.diamond)) + parseInt(web3.utils.fromWei(reward_info.doubleDiamond)) + parseInt(web3.utils.fromWei(reward_info.top)))
-                // let max_withDraw=await financeAppcontractOf.methods.withrawamount(acc).call();
-                settotalWithdraw(all_val)
-
-                obj['directs'] = web3.utils.fromWei(reward_info.directs)
-                obj['statics'] = Number(web3.utils.fromWei(reward_info.statics)).toFixed(2)
-                obj['capitals'] = Number(web3.utils.fromWei(reward_info.capitals)).toFixed(2)
-                obj['level4Released'] = Number(web3.utils.fromWei(reward_info.level4Released)).toFixed(2)
-                obj['level5Released'] = Number(web3.utils.fromWei(reward_info.level5Released)).toFixed(2)
-                obj['level4Freezed'] = (Number(web3.utils.fromWei(reward_info.level4Freezed)) + Number(web3.utils.fromWei(reward_info.level5Freezed))).toFixed(2);
-                obj['diamond'] = Number(web3.utils.fromWei(reward_info.diamond)).toFixed(2)
-                obj['doubleDiamond'] = Number(web3.utils.fromWei(reward_info.doubleDiamond)).toFixed(2)
-                obj['top'] = Number(web3.utils.fromWei(reward_info.top)).toFixed(2)
-                obj['unlock'] = Number(capitals).toFixed(2)
-                obj['totalWithdrawls'] = Number(web3.utils.fromWei(reward_info.totalWithdrawls)).toFixed(2)
-                
-                setRewardInfo(obj)
+            dispatch(withdrawInfo(acc));
             }
             } catch (e) {
                 console.log("error while get detiail",e);
@@ -87,6 +59,7 @@ function Withdraw_m(props) {
                     getDetail()
                     props.onHide()
                     setLoader(false)
+                    dispatch(withdrawInfo(acc));
                     toast.success("successfully withdraw");
                 }else{
                     setLoader(false);
@@ -131,7 +104,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>Unlock principal</p>
-                                    <p className='witddraw_p'>{rewardinfo.unlock} ULE</p>
+                                    <p className='witddraw_p'>{withdrawDetail.unlock} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +112,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>Cycle reward</p>
-                                    <p className='witddraw_p'>{rewardinfo.statics} ULE</p>
+                                    <p className='witddraw_p'>{withdrawDetail.statics} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +120,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>capitals</p>
-                                    <p className='witddraw_p'>{rewardinfo.capitals} ULE</p>
+                                    <p className='witddraw_p'>{withdrawDetail.capitals} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +128,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>1st level</p>
-                                    <p className='witddraw_p'>{rewardinfo.directs} ULE</p>
+                                    <p className='witddraw_p'>{withdrawDetail.directs} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +136,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>2-4 level</p>
-                                    <p className='witddraw_p'>{rewardinfo.level4Released} ULE</p>
+                                    <p className='witddraw_p'>{withdrawDetail.level4Released} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -171,7 +144,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>5-25 level</p>
-                                    <p className='witddraw_p'>{rewardinfo.level5Released} ULE</p>
+                                    <p className='witddraw_p'>{withdrawDetail.level5Released} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -179,7 +152,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>Freezing</p>
-                                    <p className='witddraw_p'>{rewardinfo.level4Freezed} ULE</p>
+                                    <p className='witddraw_p'>{withdrawDetail.level4Freezed} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +160,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>Diamond reward</p>
-                                    <p className='witddraw_p'>{rewardinfo.diamond} ULE</p>
+                                    <p className='witddraw_p'>{withdrawDetail.diamond} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -195,7 +168,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>Double Diamond reward</p>
-                                    <p className='witddraw_p'>{rewardinfo.doubleDiamond} ULE</p>
+                                    <p className='witddraw_p'>{withdrawDetail.doubleDiamond} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -203,7 +176,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>Top player reward</p>
-                                    <p className='witddraw_p'>{rewardinfo.top} ULE</p>
+                                    <p className='witddraw_p'>{withdrawDetail.top} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +184,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>Total withdrawl</p>
-                                    <p className='witddraw_p'>{rewardinfo.totalWithdrawls} ULE</p>
+                                    <p className='witddraw_p'>{withdrawDetail.totalWithdrawls} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -225,7 +198,7 @@ function Withdraw_m(props) {
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>Total withdraw</p>
-                                    <p className='witddraw_p'>{toatlWithdraw} ULE</p>
+                                    <p className='witddraw_p'>{all_val} ULE</p>
                                 </div>
                             </div>
                         </div>
