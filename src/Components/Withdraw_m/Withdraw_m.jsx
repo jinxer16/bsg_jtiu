@@ -54,6 +54,8 @@ function Withdraw_m(props) {
                 obj['doubleDiamond'] = Number(web3.utils.fromWei(reward_info.doubleDiamond)).toFixed(2)
                 obj['top'] = Number(web3.utils.fromWei(reward_info.top)).toFixed(2)
                 obj['unlock'] = Number(capitals).toFixed(2)
+                obj['totalWithdrawls'] = Number(web3.utils.fromWei(reward_info.totalWithdrawls)).toFixed(2)
+                
                 setRewardInfo(obj)
             }
             } catch (e) {
@@ -208,8 +210,8 @@ function Withdraw_m(props) {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
-                                    <p className='text-white'> Remaining Reward</p>
-                                    <p className='witddraw_p'>{rewardinfo.remianReward} ULE</p>
+                                    <p className='text-white'>Total withdrawl</p>
+                                    <p className='witddraw_p'>{rewardinfo.totalWithdrawls} ULE</p>
                                 </div>
                             </div>
                         </div>
