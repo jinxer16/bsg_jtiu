@@ -341,6 +341,7 @@ export const financeAppTokenAbi = [
 		"type": "function"
 	}
 ];
+
 export const financeAppContractAddress =
   "0x4dc6E623b59235CA8174AA2e0bAc6ef48F8f11DB";
 export const financeAppContract_Abi = [
