@@ -10,6 +10,7 @@ import {getRemaintime} from '../../Redux/remaintime/action';
 import {useSelector, useDispatch}  from "react-redux"
 function Split_m(props) {
   let acc = useSelector((state) => state.connect?.connection);
+  let {split} = useSelector((state)=>state.withDrawInfo);
   let [amount, setAmount] = useState('')
   let [stdAmount, setsdtAmount] = useState('')
   let [recieverAdress, setRecieverAdress] = useState('')
@@ -82,33 +83,33 @@ const splitbytransfer = async () => {
         }else{
           
           const web3 = window.web3;
+          console.log("recieverAdress",recieverAdress,"amount",amount)
           const contract = new web3.eth.Contract(financeAppContract_Abi, financeAppContractAddress);
           if (parseFloat(amount) >= 50 && parseFloat(amount) <= 50000) {
-              const {totalDeposit, referrer} = await contract.methods.userInfo(acc).call();
+              const {totalDeposit, referrer} = await contract.methods.userInfo(recieverAdress).call();
             const {split} = await contract.methods.rewardInfo(acc).call();
                 if(parseFloat(split) >= parseInt(amount)){
               if(parseFloat(totalDeposit) ==0){
 
               if (parseInt(amount) % 50 === 0) {
-                  if (referrer == '0x0000000000000000000000000000000000000000') {
-                      toast.error('please Register Account 1st ')
-                  }else {
+                 
                       setloader(true)
                       let value = web3.utils.toWei(amount);
-                      await contract.methods.transferBySplit(value).send({
+                      console.log("value",value)
+                      await contract.methods.transferBySplit(recieverAdress,value).send({
                           from:acc
                    })
                    setdepositcheck(1);
                    toast.success("Amount Deposited successfully")
                    setloader(false)
-                  }
+            
               }
               else {
                   toast.error('please enter value in ratio 50 ')
               }
         }else{
           setdepositcheck(1);
-          toast.info("you have already deposited")
+          toast.info("Receiver has already deposited")
         }
       }else{
         toast.info("You don't have any split amount")
@@ -200,7 +201,7 @@ const splitbytransfer = async () => {
                     <div className="col-lg-4">
                       <div className="d-flex gsaa">
                         <div>
-                          <p className='input_sub_p asasaa ' >{getsplit_Value} Amount</p>
+                          <p className='input_sub_p asasaa ' >{getsplit_Value} Amount {split}</p>
                         </div>
                       </div>
                     </div>
@@ -224,7 +225,7 @@ const splitbytransfer = async () => {
                     <div className="col-lg-4">
                       <div className="d-flex gsaa">
                         <div>
-                          <p className='input_sub_p asasaa ' >{getsplit_Value} Amount</p>
+                          <p className='input_sub_p asasaa ' >{getsplit_Value} Amount {split}</p>
                         </div>
                       </div>
                     </div>

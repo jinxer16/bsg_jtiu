@@ -3,8 +3,9 @@ import { financeAppContractAddress, financeAppContract_Abi } from "../../utilies
 export const withdrawInfo = (acc) => {
     return async (dispatch) => {
         try {
-        
+           
             let obj = {}
+            let split="";
             const web3 = window.web3;
             let financeAppcontractOf = new web3.eth.Contract(financeAppContract_Abi, financeAppContractAddress);
             // let availWithdraw = await financeAppcontractOf.methods.withDraw_(acc).call();
@@ -14,6 +15,8 @@ export const withdrawInfo = (acc) => {
             // obj['remianReward'] = Number(web3.utils.fromWei(remianReward)).toFixed(2);
             
             let reward_info = await financeAppcontractOf.methods.rewardInfo(acc).call();
+            let value= await financeAppcontractOf.methods.getCurSplit(acc).call();
+             split=Number(web3.utils.fromWei(value)).toFixed(2)
             console.log("obj",reward_info)
             console.log("reward_info.directs",reward_info.directs)
             console.log("reward_info.capitals",reward_info.capitals)
@@ -33,8 +36,9 @@ export const withdrawInfo = (acc) => {
             obj['top'] = Number(web3.utils.fromWei(reward_info.top)).toFixed(2)
             obj['unlock'] = Number(capitals).toFixed(2)
             obj['totalWithdrawls'] = Number(web3.utils.fromWei(reward_info.totalWithdrawls)).toFixed(2)
+            
 
-            dispatch({ type: ActionTypes.WITHDRAW_INFO, payload: obj, payload1:all_val });
+            dispatch({ type: ActionTypes.WITHDRAW_INFO, payload: obj, payload1:all_val,payload2:split });
             
             
         } catch (e) {
