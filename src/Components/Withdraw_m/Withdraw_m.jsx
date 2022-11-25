@@ -29,21 +29,24 @@ function Withdraw_m(props) {
                 let obj = {}
                 const web3 = window.web3;
                 let financeAppcontractOf = new web3.eth.Contract(financeAppContract_Abi, financeAppContractAddress);
-                let availWithdraw = await financeAppcontractOf.methods.withDraw_(acc).call();
-                availWithdraw = Number(web3.utils.fromWei(availWithdraw)).toFixed(2)
-                setAvailableWithdraw(availWithdraw);
-                let remianReward = await financeAppcontractOf.methods.remainingReward(acc).call();
-                obj['remianReward'] = Number(web3.utils.fromWei(remianReward)).toFixed(2);
+                // let availWithdraw = await financeAppcontractOf.methods.withDraw_(acc).call();
+                // availWithdraw = Number(web3.utils.fromWei(availWithdraw)).toFixed(2)
+                // setAvailableWithdraw(availWithdraw);
+                // let remianReward = await financeAppcontractOf.methods.remainingReward(acc).call();
+                // obj['remianReward'] = Number(web3.utils.fromWei(remianReward)).toFixed(2);
                 
                 let reward_info = await financeAppcontractOf.methods.rewardInfo(acc).call();
+                console.log("obj",reward_info)
+                console.log("reward_info.directs",reward_info.directs)
+                console.log("reward_info.capitals",reward_info.capitals)
                 let capitals = web3.utils.fromWei(reward_info.capitals)
-               
                 let all_val =  (parseInt(web3.utils.fromWei(reward_info.capitals)) + parseInt(web3.utils.fromWei(reward_info.statics)) + parseInt(web3.utils.fromWei(reward_info.directs)) + parseInt(web3.utils.fromWei(reward_info.level4Released)) + parseInt(web3.utils.fromWei(reward_info.level5Released)) + parseInt(web3.utils.fromWei(reward_info.diamond)) + parseInt(web3.utils.fromWei(reward_info.doubleDiamond)) + parseInt(web3.utils.fromWei(reward_info.top)))
+                // let max_withDraw=await financeAppcontractOf.methods.withrawamount(acc).call();
                 settotalWithdraw(all_val)
 
                 obj['directs'] = web3.utils.fromWei(reward_info.directs)
                 obj['statics'] = Number(web3.utils.fromWei(reward_info.statics)).toFixed(2)
-                obj['capitals'] = Number(web3.utils.fromWei(reward_info.directs)).toFixed(2)
+                obj['capitals'] = Number(web3.utils.fromWei(reward_info.capitals)).toFixed(2)
                 obj['level4Released'] = Number(web3.utils.fromWei(reward_info.level4Released)).toFixed(2)
                 obj['level5Released'] = Number(web3.utils.fromWei(reward_info.level5Released)).toFixed(2)
                 obj['level4Freezed'] = (Number(web3.utils.fromWei(reward_info.level4Freezed)) + Number(web3.utils.fromWei(reward_info.level5Freezed))).toFixed(2);
@@ -95,6 +98,7 @@ function Withdraw_m(props) {
     }
 }
     return (
+        
         <div>
             <Modal
                 {...props}
@@ -140,8 +144,16 @@ function Withdraw_m(props) {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
-                                    <p className='text-white'>1st level</p>
+                                    <p className='text-white'>capitals</p>
                                     <p className='witddraw_p'>{rewardinfo.capitals} ULE</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="d-flex justify-content-between">
+                                    <p className='text-white'>1st level</p>
+                                    <p className='witddraw_p'>{rewardinfo.directs} ULE</p>
                                 </div>
                             </div>
                         </div>
@@ -216,14 +228,14 @@ function Withdraw_m(props) {
                             </div>
                         </div>
 
-                        {toatlWithdraw && <div className="row">
+                        {/* {toatlWithdraw && <div className="row">
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
                                     <p className='text-white'>Maximum withdraw</p>
                                     <p className='witddraw_p'>{available_withdraw} ULE</p>
                                 </div>
                             </div>
-                        </div>}
+                        </div>} */}
                     </div>
                     <Button className='s_d_Ws  w-100' onClick={() => { withdrawAmount() }}>{loader ? <ReactLoading type="spin" color="#ffffff" className='mb-2 mx-auto' height={30} width={30} /> : "Withdraw"}</Button>
                 </Modal.Footer>
