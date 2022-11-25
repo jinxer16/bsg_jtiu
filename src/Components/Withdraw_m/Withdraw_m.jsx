@@ -49,7 +49,7 @@ function Withdraw_m(props) {
               }else{
                 setLoader(true)
                 console.log("available_withdraw",typeof toatlWithdraw);
-                if(toatlWithdraw > 0 ){
+                if(all_val> 0 ){
 
                     const web3 = window.web3;
                     let financeAppcontractOf = new web3.eth.Contract(financeAppContract_Abi, financeAppContractAddress);
@@ -197,7 +197,7 @@ function Withdraw_m(props) {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">
-                                    <p className='text-white'>Total withdraw</p>
+                                    <p className='text-white'>Total Withdrawable</p>
                                     <p className='witddraw_p'>{all_val} ULE</p>
                                 </div>
                             </div>
