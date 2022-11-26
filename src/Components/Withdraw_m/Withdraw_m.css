@@ -6,3 +6,19 @@
 .bb {
     border-bottom: 1px solid #c1c7cb;
 }
+
+.light{
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    /* background-color: red; */
+    animation: light_animate 1s infinite;
+}
+@keyframes light_animate {
+    from{
+        background-color: #fff;
+    }
+    to{
+        background-color: red;
+    }
+}

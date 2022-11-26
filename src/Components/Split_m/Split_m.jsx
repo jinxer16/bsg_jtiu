@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import ReactLoading from 'react-loading';
 import { financeAppContractAddress, financeAppContract_Abi, financeAppTokenAbi, financeAppTokenAddress } from '../../utilies/Contract';
 import {getRemaintime} from '../../Redux/remaintime/action';
+import {withdrawInfo} from "../../Redux/withdrawDetail/action"
 import {useSelector, useDispatch}  from "react-redux"
 function Split_m(props) {
   let acc = useSelector((state) => state.connect?.connection);
@@ -143,6 +144,7 @@ const splitbytransfer = async () => {
           console.log("Connect Wallet");
         }else{
         const web3 = window.web3;
+        dispatch(withdrawInfo(acc))
         let financeAppcontractOf = new web3.eth.Contract(financeAppContract_Abi, financeAppContractAddress);
         let getCurSplit = await financeAppcontractOf.methods.getCurSplit(acc).call();
         getCurSplit = web3.utils.fromWei(getCurSplit)
@@ -201,7 +203,7 @@ const splitbytransfer = async () => {
                     <div className="col-lg-4">
                       <div className="d-flex gsaa">
                         <div>
-                          <p className='input_sub_p asasaa ' >{getsplit_Value} Amount {split}</p>
+                          <p className='input_sub_p asasaa ' >{split} Amount</p>
                         </div>
                       </div>
                     </div>
@@ -225,7 +227,7 @@ const splitbytransfer = async () => {
                     <div className="col-lg-4">
                       <div className="d-flex gsaa">
                         <div>
-                          <p className='input_sub_p asasaa ' >{getsplit_Value} Amount {split}</p>
+                          <p className='input_sub_p asasaa ' >{split} Amount </p>
                         </div>
                       </div>
                     </div>

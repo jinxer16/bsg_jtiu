@@ -7,17 +7,14 @@ import "./Withdraw_m.css"
 import ReactLoading from 'react-loading';
 import { financeAppContractAddress, financeAppContract_Abi } from '../../utilies/Contract';
 import {withdrawInfo} from '../../Redux/withdrawDetail/action'
-import { loadWeb3 } from '../../apis/api';
 import { toast } from 'react-toastify';
 import {useSelector,useDispatch}  from "react-redux"
 
 function Withdraw_m(props) {
     const dispatch = useDispatch()
   let acc = useSelector((state) => state.connect?.connection);
-  let {withdrawDetail,all_val} = useSelector((state)=>state.withDrawInfo);
+  let {withdrawDetail,all_val, status} = useSelector((state)=>state.withDrawInfo);
     const [loader, setLoader] = useState(false);
-    const [available_withdraw, setAvailableWithdraw] = useState(0);
-    const [rewardinfo, setRewardInfo] = useState({});
     const [toatlWithdraw, settotalWithdraw] = useState(0)
     const getDetail = async () => {
         try {
@@ -35,6 +32,7 @@ function Withdraw_m(props) {
             }
 
     }
+    
     useEffect(() => {
         getDetail()
     }, [acc]);
@@ -100,6 +98,15 @@ function Withdraw_m(props) {
                 </Modal.Header>
                 <Modal.Body className='body_m_bg bb'>
                     <div className="container">
+                    <div className="row">
+                          { status && <div className="col-lg-12">
+                                <div className="d-flex justify-content-evenly">
+                                    <h5 className='text-white'>You have to upgrade your package to get passive income</h5>
+                                    <p className='light mt-3'></p>
+                                    {/* <p className='witddraw_p'>{withdrawDetail.unlock} ULE</p> */}
+                                </div>
+                            </div>}
+                        </div>
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="d-flex justify-content-between">

@@ -1,5 +1,5 @@
 export const financeAppTokenAddress =
-  "0x592f99A37D1BBaD466f78B116b7CF3a6c12a9799";
+	"0x592f99A37D1BBaD466f78B116b7CF3a6c12a9799";
 
 export const financeAppTokenAbi = [
 	{
@@ -343,7 +343,7 @@ export const financeAppTokenAbi = [
 ];
 
 export const financeAppContractAddress =
-  "0x74939581D075B226adC842eef0eB54B2a7AF159F";
+	"0x133Fc0a65c67EaBce8b6a00D77262526A8d9BB74";
 export const financeAppContract_Abi = [
 	{
 		"inputs": [
@@ -430,26 +430,6 @@ export const financeAppContract_Abi = [
 	{
 		"inputs": [],
 		"name": "distributePoolRewards",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "value",
-				"type": "uint256"
-			}
-		],
-		"name": "getin",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getin",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -675,19 +655,6 @@ export const financeAppContract_Abi = [
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "_oneTime",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -813,6 +780,11 @@ export const financeAppContract_Abi = [
 				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "status",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -1401,19 +1373,6 @@ export const financeAppContract_Abi = [
 				"internalType": "address",
 				"name": "",
 				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "timesDiff",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
